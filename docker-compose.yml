@@ -1,0 +1,13 @@
+services:
+  chainlens:
+    build: .
+    container_name: chainlens-app
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data/output:/app/data/output
+      - ./data/cache:/app/data/cache
+      - ./.env:/app/.env:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
