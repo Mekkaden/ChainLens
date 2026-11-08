@@ -1,0 +1,28 @@
+# ChainLens data configuration. Secrets stay in .env, never here.
+paths:
+  labels_dir: data/labels
+  sample_dir: data/sample
+  cache_dir: data/cache/addresses
+  output_dir: data/output
+  warehouse: data/output/chainlens.duckdb
+
+sampling:
+  seed: 42
+  test_size: 0.3
+  negative_count: 2000
+  context_random_blocks: 20
+  context_max_addresses: 500
+  max_addresses: null          # set from --max-addresses for a development run
+
+window:
+  mode: per_address_recent     # per_address_recent | fixed_blocks
+  max_txs_per_address: 500
+  fixed_block_start: 19000000
+  fixed_block_end: 19045000
+
+etherscan:
+  base_url: https://api.etherscan.io/v2/api
+  chain_id: 1
+  calls_per_second: 3
+  max_retries: 5
+  timeout_seconds: 30

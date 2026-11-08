@@ -1,0 +1,22 @@
+# Detection parameters. All are read at runtime; no magic numbers in code.
+dbscan:
+  # 95th percentile of the 5-NN distance on the current feature cohort.
+  # Recompute from the k-distance if the cohort or scaler changes.
+  eps: 1.0122
+  min_samples: 5
+  min_tx_total: 3
+
+louvain:
+  seed: 42
+  weight: total_value_eth
+  resolution: 1.0
+
+pagerank:
+  alpha: 0.85
+  max_iter: 100
+  tol: 1.0e-6
+
+cycles:
+  max_scc_size: 5000
+  enum_cap: 5000
+  per_scc_cap: 1000

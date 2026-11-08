@@ -1,0 +1,25 @@
+# Local credentials
+.env
+
+# Generated data (keep the committed sample + labels)
+data/raw/
+data/processed/
+data/cache
+data/cache/
+data/output
+data/output/
+data/output_*/
+*.duckdb
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
