@@ -1593,7 +1593,9 @@ def main() -> None:
             submitted = st.form_submit_button("Open dossier")
         if submitted:
             jump = jump.strip().lower()
-            if jump in set(scores["address"]):
+            if not jump:
+                st.info("Please enter a 0x address")
+            elif jump in set(scores["address"]):
                 navigate("Wallet dossier", jump)
             else:
                 st.warning("Address not found in cohort")
